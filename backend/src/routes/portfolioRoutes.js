@@ -1,0 +1,10 @@
+const router=require("express").Router();
+const protect=require("../middleware/authMiddleware");
+const c=require("../controllers/portfolioController");
+router.get("/",protect,c.getPortfolio);
+router.post("/",protect,c.addPortfolioAsset);
+router.delete("/:id",protect,c.deletePortfolioAsset);
+router.get("/watchlist",protect,c.getWatchlist);
+router.post("/watchlist",protect,c.addToWatchlist);
+router.delete("/watchlist/:id",protect,c.removeFromWatchlist);
+module.exports=router;

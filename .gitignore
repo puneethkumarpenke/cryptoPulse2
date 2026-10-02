@@ -1,0 +1,15 @@
+node_modules/
+.next/
+.env.local
+*.log
+backend/database/*.db
+coverage/
+.DS_Store
+node_modules/
+.env
+.env.local
+.env.production
+.next/
+backend/database/*.db
+backend/database/*.db-shm
+backend/database/*.db-wal

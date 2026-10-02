@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
+      NODE_ENV: production
+      JWT_SECRET: change-this-secret
+      CRYPTO_API_URL: https://api.coingecko.com/api/v3
+      CLIENT_URL: http://localhost:3000
+    volumes:
+      - crypto-data:/app/database
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  crypto-data:
