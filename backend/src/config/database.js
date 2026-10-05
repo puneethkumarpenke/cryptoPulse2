@@ -2,8 +2,6 @@ const Database = require("better-sqlite3");
 const path = require("path");
 const fs = require("fs");
 
-// Use DATABASE_PATH from environment.
-// Local development falls back to the project's database folder.
 const databasePath =
     process.env.DATABASE_PATH ||
     path.join(__dirname, "../../database/crypto_pulse.db");
